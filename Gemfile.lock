@@ -82,8 +82,8 @@ GEM
     foreman (0.41.0)
       thor (>= 0.13.6)
     forgery (0.5.0)
-    formtastic (2.1.1)
-      actionpack (~> 3.0)
+    formtastic (2.2.0)
+      actionpack (>= 3.0)
     friendly_id (4.0.4)
     haml (3.1.4)
     haml-rails (0.3.4)
@@ -132,6 +132,8 @@ GEM
     net-http-persistent (2.6)
     nokogiri (1.5.2)
     ntlm-http (0.1.1)
+    page_title_helper (2.0.0)
+      rails (>= 3.0.0)
     pg (0.13.2)
     polyglot (0.3.3)
     progressbar (0.10.0)
@@ -264,6 +266,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   launchy
+  page_title_helper
   pg
   rails (= 3.2.3)
   rails-erd

@@ -43,6 +43,7 @@ gem "haml"
 gem "haml-rails"
 gem "twitter-bootstrap-rails", ">= 2.0.4"
 gem "formtastic-bootstrap", :git => "https://github.com/cgunther/formtastic-bootstrap", :branch => "bootstrap2-rails3-2-formtastic-2-1"
+gem 'page_title_helper'
 gem "bcrypt-ruby"
 gem "rails-i18n"
 gem "kaminari"
@@ -65,7 +66,6 @@ gem "therubyracer"
 #gem 'term-ansicolor'
 #gem 'rake-hook'
 #gem 'configatron'
-#gem 'page_title_helper'
 
 group :development, :test do
   gem 'rspec-rails'
