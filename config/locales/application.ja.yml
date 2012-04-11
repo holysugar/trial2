@@ -1,0 +1,38 @@
+ja:
+  formtastic:
+    titles:
+      items_details: アイテム管理
+    # ↓これはフォームのラベル表示用で、 ar のものを上書きできる
+    labels:
+      title: たいとる
+      item:
+        name: 表示名
+    hints:
+      item:
+        name: ヒント日本語OK
+        kind: いまのところ 1〜3 のみ
+    placeholders:
+      item:
+        name: "@holysugar"
+        description: メモ
+        price: 12345
+    actions:
+      create: "%{model}の作成"
+      update: 変更の適用
+      reset: リセット
+      cancel: キャンセルして戻る
+
+  activerecord:
+    models:
+      item: アイテム
+    attributes:
+      item:
+        name: 名前
+        price: 値段
+        description: 備考
+        kind: 種別
+        enabled: 有効フラグ
+
+  items:
+    title: アイテム管理
+
