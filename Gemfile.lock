@@ -1,7 +1,7 @@
 GIT
-  remote: https://github.com/cgunther/formtastic-bootstrap
-  revision: 4e6a7f50153af805470d43a2bd2c9885a902e4a6
-  branch: bootstrap2-rails3-2-formtastic-2-1
+  remote: https://github.com/holysugar/formtastic-bootstrap
+  revision: a96899004b188948273dee6e697a165313bf397d
+  branch: bootstrap2-rails3-2-formtastic-2-2
   specs:
     formtastic-bootstrap (1.1.2)
       formtastic
@@ -257,7 +257,7 @@ DEPENDENCIES
   factory_girl_rails
   foreman
   forgery
-  formtastic
+  formtastic (>= 2.2.0)
   formtastic-bootstrap!
   friendly_id
   haml
