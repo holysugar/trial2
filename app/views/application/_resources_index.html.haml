@@ -1,0 +1,19 @@
+-# resource_class = @items.first.class
+-# resources = @items
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      -# FIXME choose what attributes to display in view model
+      - resource_class.attribute_names.each do |key|
+        %th= resource_class.human_attribute_name(key)
+      %th{cols: 3}
+  %tbody
+    - resources.each do |o|
+      %tr
+        - resource_class.attribute_names.each do |key|
+          %td= o.send(key)
+        %td= link_to t('view.show'), o
+        %td= link_to t('view.edit'), [:edit, o]
+        %td= link_to t('view.destroy'), o, :method => :delete, :confirm => t('view.destroy_confirm', :default => 'Are you sure?')
+
