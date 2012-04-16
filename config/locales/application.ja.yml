@@ -60,6 +60,7 @@ ja:
         description: 備考
         kind: 種別
         enabled: 有効フラグ
+        description_length: 文字数
 
   # TranslationHelper#translate で利用される
   items:
