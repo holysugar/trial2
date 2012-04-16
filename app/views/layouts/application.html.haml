@@ -28,7 +28,9 @@
           .well.sidebar-nav
             = render 'sidebar'
         .span9
+          .page-header
+            %h1= page_title :format => false
           = yield
-      %footer
-        %p &copy; COPY-NAME-FIXME, 2012
+      %footer.footer
+        %p.pull-right &copy; COPY-NAME-FIXME, 2012
     = javascript_include_tag "application"

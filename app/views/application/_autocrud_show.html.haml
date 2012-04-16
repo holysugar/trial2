@@ -1,0 +1,8 @@
+
+%table.table.table-bordered.table-striped
+  %tbody
+    - attrs.each do |key|
+      %tr
+        %th= resource_class.human_attribute_name(key)
+        %td= resource.send(key)
+

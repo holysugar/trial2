@@ -1,7 +1,6 @@
-%h1 Editing item
+= resource_form @item
 
-= render 'form'
-
-= link_to 'Show', @item
-\|
-= link_to 'Back', items_path
+%footer.footer
+  = link_to 'Show', @item
+  \|
+  = link_to 'Back', items_path

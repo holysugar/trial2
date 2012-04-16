@@ -8,7 +8,6 @@ module ResourceTemplatesHelper
     resource = resources.first
     attrs = calculate_attrs(resource, options, :index)
     if resources.present?
-      resource_class = resource.class
       render 'resources_index', options.reverse_merge(
         :resources => resources, :resource_class => resource.class,
         :attrs => attrs
@@ -17,6 +16,16 @@ module ResourceTemplatesHelper
       content_tag(:p, t(:'view.display_nothing'))
     end
   end
+
+  def resource_show(resource, options = {}, &block)
+    attrs = calculate_attrs(resource, options, :show)
+    resource_class = resource.class
+    render 'autocrud_show', options.reverse_merge(
+      :resource => resource, :resource_class => resource.class,
+      :attrs => attrs
+    )
+  end
+
 
   private
   def calculate_attrs(resource, options, default_autocrud)
