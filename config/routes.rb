@@ -1,4 +1,6 @@
 Trial2::Application.routes.draw do
+  resources :item_queries
+
   resources :items
 
   # The priority is based upon order of creation:
