@@ -4,5 +4,5 @@
     - attrs.each do |key|
       %tr
         %th= resource_class.human_attribute_name(key)
-        %td= resource.send(key)
+        %td~ resource.send(key)
 
