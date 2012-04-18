@@ -23,6 +23,9 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.1.2)
+    active_attr (0.5.1)
+      activemodel (>= 3.0.2, < 4.1)
+      activesupport (>= 3.0.2, < 4.1)
     active_decorator (0.3.2)
     activemodel (3.2.3)
       activesupport (= 3.2.3)
@@ -246,6 +249,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_attr
   active_decorator
   bcrypt-ruby
   capybara

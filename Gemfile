@@ -37,23 +37,24 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem "pg"
-gem "thin"
-gem "haml"
-gem "haml-rails"
-gem "twitter-bootstrap-rails", ">= 2.0.4"
-gem "formtastic-bootstrap", :git => "https://github.com/holysugar/formtastic-bootstrap", :branch => "bootstrap2-rails3-2-formtastic-2-2", :require => 'formtastic-bootstrap'
+gem 'pg'
+gem 'thin'
+gem 'haml'
+gem 'haml-rails'
+gem 'twitter-bootstrap-rails', '>= 2.0.4'
+gem 'formtastic-bootstrap', :git => 'https://github.com/holysugar/formtastic-bootstrap', :branch => 'bootstrap2-rails3-2-formtastic-2-2', :require => 'formtastic-bootstrap'
 gem 'page_title_helper'
-gem "bcrypt-ruby"
-gem "rails-i18n"
-gem "kaminari"
-gem "responders"
-gem "formtastic", ">= 2.2.0"
-gem "friendly_id"
-gem "active_decorator"
-gem "enumerize"
-gem "foreman"
-gem "therubyracer"
+gem 'bcrypt-ruby'
+gem 'rails-i18n'
+gem 'active_attr'
+gem 'kaminari'
+gem 'responders'
+gem 'formtastic', '>= 2.2.0'
+gem 'friendly_id'
+gem 'active_decorator'
+gem 'enumerize'
+gem 'foreman'
+gem 'therubyracer'
 # Utilities
 #gem 'airbrake' # needs generating configuration
 #gem 'twitter-bootstrap-rails'
@@ -80,7 +81,7 @@ group :development, :test do
   #gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git', :require => false
   #gem 'guard', :require => false
   #gem 'grit'
-  #gem "email_spec"
+  #gem 'email_spec'
   #gem 'ir_b'
 end
 
