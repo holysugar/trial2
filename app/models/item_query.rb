@@ -19,9 +19,11 @@ class ItemQuery
 
   def search
     # FIXME kaminari?
-    @items = search_query.all
+    @items = search_query
   rescue
-    @items = []
+    @items = Item.scoped
+  ensure
+    valid?
   end
 
   def search_query
@@ -46,9 +48,9 @@ class ItemQuery
 
   def delegated_validate(klass, *attrs)
     inner = klass.new(attributes.symbolize_keys.slice(*attrs))
-    if wrapped.invalid?
+    if inner.invalid?
       attrs.each do |attr|
-        if attributes[attr.to_s] && (error = wrapped.errors[attr]).present? # allow nil
+        if attributes[attr.to_s].present? && (error = inner.errors[attr]).present? # allow nil
           error.each do |e|
             self.errors.add attr, e
           end

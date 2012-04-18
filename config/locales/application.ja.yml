@@ -16,6 +16,7 @@ ja:
 
 
   views:
+    # kaminari で利用されるもの
     pagination:
       first: "&laquo; 最初"
       last: "最後 &raquo;"
@@ -27,11 +28,16 @@ ja:
   formtastic:
     titles:
       items_details: アイテム管理
+      item_queries: アイテム検索
     # フォームのラベル表示用で、 ar のものを上書きできる
     labels:
-      title: たいとる
       item:
         name: 表示名
+      item_query:
+        price: 値段
+        price_op: "gt(以上), lt(以下), 空(等しい)"
+        name: 名前
+        kind: 種類
     # フォームのヒント表示用
     hints:
       item:
@@ -43,6 +49,8 @@ ja:
         name: "@holysugar"
         description: メモ
         price: 12345
+      item_query:
+        price_op: "gt / lt / (空)"
     # フォームのボタン/リンクの文言
     actions:
       create: "%{model}の作成"
@@ -62,6 +70,7 @@ ja:
     # model の名前
     models:
       item: アイテム
+      item_query: アイテム問い合わせ
     # 各モデルの属性の名前
     attributes:
       item:
@@ -72,11 +81,12 @@ ja:
         enabled: 有効フラグ
         description_length: 文字数
 
-  # TranslationHelper#translate で利用される
+  # view で TranslationHelper#translate で利用される
   items:
     # ItemsController 共通の title
     title: アイテム管理
     new:
       # ItemsController#new のみの title
       title: アイテム管理（新規作成）
-
+  item_queries:
+    title: アイテム管理

@@ -16,6 +16,5 @@ module ItemDecorator
   def description_pre
     content_tag(:pre, description)
   end
-
 end
 
