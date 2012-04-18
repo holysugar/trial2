@@ -6,12 +6,22 @@ ja:
 
   # オリジナル。汎用的に view で利用するもの。
   # see views/application/*
+  # FIXME: rename to views
   view:
     show: 詳細
     edit: 編集
     destroy: 削除
     destroy_confirm: "削除してもよろしいですか?"
     display_nothing: 表示するものがありません
+
+
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: …
 
   # formtastic で利用されるもの
   formtastic:
