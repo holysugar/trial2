@@ -5,9 +5,9 @@ module ResourceTemplatesHelper
   end
 
   def resources_index(resources, options = {}, &block)
-    resource = resources.first
-    attrs = calculate_attrs(resource, options, :index)
+    resource = resources.try(:first)
     if resources.present?
+      attrs = calculate_attrs(resource, options, :index)
       render 'resources_index', options.reverse_merge(
         :resources => resources, :resource_class => resource.class,
         :attrs => attrs

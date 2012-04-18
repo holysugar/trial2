@@ -1,0 +1,7 @@
+= semantic_form_for @item_query,
+    :html => {:class => 'form-search'},
+    :method => :get,
+    :builder => builder do |f|
+  = f.inputs *@item_query.attributes.keys.map(&:to_sym)
+  = f.actions
+
