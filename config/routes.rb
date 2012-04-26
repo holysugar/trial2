@@ -1,4 +1,6 @@
 Trial2::Application.routes.draw do
+  resources :users
+
   resources :item_queries
 
   resources :items
