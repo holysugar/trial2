@@ -16,17 +16,25 @@ module Trial
 
       def controller_with_kaminari
         if Kernel.const_defined?("Kaminari")
-          gsub_file("app/controllers/#{table_name}_controller.rb", /(@#{singular_name} = #{class_name})\.all/) do |match|
-            match + '.page params[:page]'
+          gsub_file("app/controllers/#{table_name}_controller.rb", "@#{table_name} = #{class_name}.all") do |match|
+            match.sub('.all', '.page params[:page]')
           end
         end
       end
 
       def fix_spec_with_responder_controller
-        gsub_file "spec/controllers/#{table_name}_controller_spec.rb", "#{class_name}.any_instance.stub(:save).and_return(false)" do |match|
-          "#" + match
-        end
+        gsub_file "spec/controllers/#{table_name}_controller_spec.rb", "#{class_name}.any_instance.stub(:save).and_return(false)", \
+          "#{class_name}.any_instance.stub(:errors){ ActiveModel::Errors.new(#{class_name}.new).tap{|e| e.add(:id, 'something wrong')} }"
       end
+
+      def print_notification
+        say "Please check below:"
+        say " * Add validation to app/models/#{singular_name}.rb"
+        say " * Add valid model parameter to spec/controllers/#{table_name}_controller_spec.rb"
+        say " * Migrate DB (adding constraints if needed)"
+      end
+
+      undef generate_view_specs
 
     end
   end

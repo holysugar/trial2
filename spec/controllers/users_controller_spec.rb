@@ -24,7 +24,7 @@ describe UsersController do
   # User. As you add validations to User, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {name: Forgery::Basic.text, money: Random.rand(10000000)}
   end
   
   # This should return the minimal set of values that should be in the session
@@ -88,14 +88,14 @@ describe UsersController do
     describe "with invalid params" do
       it "assigns a newly created but unsaved user as @user" do
         # Trigger the behavior that occurs when invalid params are submitted
-        #User.any_instance.stub(:save).and_return(false)
+        User.any_instance.stub(:errors){ ActiveModel::Errors.new(User.new).tap{|e| e.add(:id, 'something wrong')} }
         post :create, {:user => {}}, valid_session
         assigns(:user).should be_a_new(User)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        #User.any_instance.stub(:save).and_return(false)
+        User.any_instance.stub(:errors){ ActiveModel::Errors.new(User.new).tap{|e| e.add(:id, 'something wrong')} }
         post :create, {:user => {}}, valid_session
         response.should render_template("new")
       end
@@ -131,7 +131,7 @@ describe UsersController do
       it "assigns the user as @user" do
         user = User.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        #User.any_instance.stub(:save).and_return(false)
+        User.any_instance.stub(:errors){ ActiveModel::Errors.new(User.new).tap{|e| e.add(:id, 'something wrong')} }
         put :update, {:id => user.to_param, :user => {}}, valid_session
         assigns(:user).should eq(user)
       end
@@ -139,7 +139,7 @@ describe UsersController do
       it "re-renders the 'edit' template" do
         user = User.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        #User.any_instance.stub(:save).and_return(false)
+        User.any_instance.stub(:errors){ ActiveModel::Errors.new(User.new).tap{|e| e.add(:id, 'something wrong')} }
         put :update, {:id => user.to_param, :user => {}}, valid_session
         response.should render_template("edit")
       end
