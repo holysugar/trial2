@@ -1,4 +1,9 @@
 require 'rails/generators/rails/scaffold/scaffold_generator'
+require 'generators/rspec/scaffold/scaffold_generator'
+
+class Rspec::Generators::ScaffoldGenerator
+  def generate_view_specs; end
+end
 
 module Trial
   module Generators
@@ -34,7 +39,6 @@ module Trial
         say " * Migrate DB (adding constraints if needed)"
       end
 
-      undef generate_view_specs
 
     end
   end
